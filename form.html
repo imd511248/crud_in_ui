@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="#">
+            <div class="box">
+                <label for="inpt">Username : <sup>*</sup></label>
+                <input class="username" type="text" id="inpt-0" placeholder="e.g  mohammad" />
+            </div>
+            <br />
+            <div class="box">
+                <label for="inpt-2">Email : <sup>*</sup></label>
+                <input type="email" id="email" placeholder="e.g  Daud" />
+            </div>
+            <button type="button" onclick="getData()">SUbmit</button>
+            <!-- <input type="reset" id="reset-1" /> -->
+            <br /><br />
+
+        </form>
+        <div id="result">
+            <div>
+                User name: <span id="userId"></span>
+            </div>
+            <div>
+                Password: <span id="emailId"></span>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="./javascript-use/form-tag.js"></script> -->
+    <script>
+        function getData() {
+            const userElem = document.querySelector('.username')
+            const emailElem = document.querySelector('#email')
+            const userVal = userElem.value;
+            const emailVal = emailElem.value;
+
+            if (userVal && emailVal) {
+                userElem.value = '';
+                emailElem.value = '';
+                document.querySelector('#userId').textContent = userVal;
+                document.querySelector('#emailId').textContent = emailVal;
+            } else {
+                alert('please fill the form')
+            }
+        }
+        // ajcb jhab sc sjxjbkaj jksxbkjabsjkb kjjassxa 
+
+        // const myArr = [1, 2, 3];
+        // const arrTwo = myArr.splice(0, 1).slice(0, 2);
+        // arrTwo[0] = 9;
+        // console.log(arrTwo);////lenth 1 ...0:-9 answr
+
+        // let myColor = 'Purple' || 'Red'; // purple
+        // myColor = 'pink' && 'white' // white
+        // console.log(myColor);
+
+        // function truthy(x) {
+        //     if (5 === x) {
+        //         return false;
+        //     } else {
+        //         return true;
+        //     }
+        // }
+        // console.log(truthy(5));
+
+        // function truthy(x) {
+        //     return 5 === x;
+        // }
+        // console.log(truthy(5));//true
+
+        // console.log(null == undefined == 0 == ''); // true
+        // console.log(null == undefined == 0 == '' == NaN); // false
+
+        // console.log(null == undefined);// true
+        // console.log(true == 0);// false
+        // console.log(false == '');//true
+
+
+        // let switcheroo;
+        // switch ('abc') {
+        //     case ('abc'):
+        //         switcheroo = 'step 1';
+        //     default:
+        //         switcheroo = 'step 2';
+        // }
+        // console.log(switcheroo);////step 2 //but why
+        // {
+
+    </script>
+</body>
+
+</html>

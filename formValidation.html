@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<style>
+
+    
+.contain {
+    width: 460px;
+    background-color: aquamarine;
+    border: 1px solid red;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 27px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.code {
+    color: red;  
+    font-size: 12px;
+    font-weight: 200;
+    margin-left: 120px;
+    padding-top: 1px;
+    display: none;
+}
+
+s .power:hover {
+    background-color: pink;
+    color: green;
+}
+
+.power {
+    padding: 8px 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.ui1 {
+    font-size: 20px;
+    height: 40px;
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+span {
+    margin-right: 15px;
+}
+
+.simple_div {
+    height: 80px;
+}
+</style>
+
+<body>
+    <div class="container">
+        <div class="contain">
+
+            <div class="simple_div">
+                <span>Name</span>
+                <input type="text" id="input1" class="ui1" placeholder="Name">
+                <p id="para1" class="code">Fill and submit</p>
+            </div>
+            <div class="simple_div">
+                <span> Email</span>
+                <input type="email" id="input2" class="ui1" placeholder="Email id">
+                <p id="para2" class="code">Fill and submit</p>
+            </div>
+            <div class="simple_div">
+                <span>Mob no</span>
+                <input type="tel" id="input3" class="ui1" placeholder="Mob no">
+                <p id="para3" class="code">Fill and submit</p>
+            </div>
+            <div class="simple_div">
+                <span>Subject</span>
+                <input type="text" id="input4" class="ui1" placeholder="Subject">
+                <p id="para4" class="code">Fill and submit</p>
+            </div>
+            <div class="simple_div">
+                <span>Gender</span>
+                <input type="text" id="input5" class="ui1" placeholder="gender">
+                <p id="para5" class="code">Fill and submit</p>
+            </div>
+            <div class="simple_div">
+                <span class="span">Age</span>
+                <input type="number" id="input6" class="ui1" placeholder="Age">
+                <p id="para6" class="code">Fill and submit</p>
+                <button class="power" onclick="submitbtn()">SUBMIT</button>
+            </div>
+        </div>
+
+        <script>
+
+            function submitbtn() {
+                let set1 = document.getElementById('input1').value
+                let set2 = document.getElementById('input2').value
+                let set3 = document.getElementById('input3').value
+                let set4 = document.getElementById('input4').value
+                let set5 = document.getElementById('input5').value
+                let set6 = document.getElementById('input6').value
+
+
+                if (set1 == "") {
+                    document.getElementById('para1').style.display = "block";
+                }
+                else {
+                    document.getElementById('para1').style.display = "none";
+
+                }
+
+
+                if (set2 == "") {
+                    document.getElementById('para2').style.display = "block";
+                }
+                else {
+                    document.getElementById('para2').style.display = "none";
+                }
+
+
+                if (set3 == "") {
+                    document.getElementById('para3').style.display = "block";
+                }
+                else {
+                    document.getElementById('para3').style.display = "none";
+                }
+
+
+                if (set4 == "") {
+                    document.getElementById('para4').style.display = "block";
+                }
+                else {
+                    document.getElementById('para4').style.display = "none";
+
+                }
+
+
+                if (set5 == "") {
+                    document.getElementById('para5').style.display = "block";
+                }
+                else {
+                    document.getElementById('para5').style.display = "none";
+
+                }
+
+
+                if (set6 == "") {
+                    document.getElementById('para6').style.display = "block";
+                }
+                else {
+                    document.getElementById('para6').style.display = "none";
+
+                }
+
+            }
+        </script>
+
+    </div>
+</body>
+
+</html>

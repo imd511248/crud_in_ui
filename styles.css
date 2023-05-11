@@ -1,0 +1,41 @@
+input {
+    color: red;
+}
+
+table,
+th,
+td {
+    border: 1px solid green;
+}
+
+table {
+    margin-top: 85px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+body{
+    text-align: center;
+}
+tr,th{
+    padding: 10px 70px;
+    font-size: 25px;
+}
+button{
+    background-color: rgb(8, 61, 253);
+    color: rgb(237, 242, 237);
+}
+/* .btn1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+.style {
+    position: absolute;
+    left: 26%;
+    font-size: 25px;
+    padding: 5px 15px;
+    top: 20.5%;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revision</title>
+    <style>
+        table,
+        td,
+        th,
+        tr {
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div>
+            <button onclick="checkRow()" id="deleteAllitem" style="display: none;">Delete</button>
+            <input type="text" id="myInput" placeholder="enter">
+            <button onclick="elementPush()">Push</button>
+            <button onclick="updateValue()">Update</button>
+
+            <table border="1">
+                <tr>
+                    <th style="font-size:20px; width: 10px; padding:10px 20px;">Select</th>
+                    <th>S.no</th>
+                    <th>Name</th>
+                    <th>Action</th>
+                </tr>
+                <tbody id="tableData"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+
+        let array = []
+        let selectedIndex //array not define because we are not use array i use only value asign //
+        let selectedButton = []
+
+
+        function printElement(inputValue) {
+            let tableData = document.getElementById("tableData");
+            let elementRow = ''
+            for (let i = 0; i < inputValue.length; i++) {
+
+                elementRow += `<tr>
+                    <td>
+                       <input type="checkbox" onclick="checkClick(this,${i})">
+                    </td>
+                    <td>${i + 1}</td>
+                    <td>${inputValue[i]}</td>
+                    <td>
+                        <button onclick="itemDelete(${i})">Delete</button>
+                        <button onclick="itemEdit(${i})">Edit</button>
+                    </td>
+                 </tr>`
+            }
+            tableData.innerHTML = elementRow
+        }
+        // push total value and data in original array global variable // 
+        function elementPush() {
+            let inputValue = document.getElementById("myInput").value;
+            array.push(inputValue)
+            printElement(array)
+            document.getElementById("myInput").value = ''
+        }
+        // this section is delete selected index //
+        function itemDelete(index) {
+            array.splice(index, 1)
+            printElement(array)
+
+        }
+        /// this section is edit item selected index ///
+        function itemEdit(index) {
+            selectedIndex = index
+            document.getElementById("myInput").value = array[index]
+        }
+        //update selected item edit before update section//
+        function updateValue() {
+            let inputValue = document.getElementById("myInput").value;
+            array[selectedIndex] = inputValue;
+            printElement(array)
+            document.getElementById("myInput").value = ''
+        }
+        // section is create create all deletebutton show and hide//
+        function checkClick(evet, index) {
+            if (evet.checked) {
+                selectedButton.push(index)
+            }
+            else {
+                selectedButton.splice(index, 1)
+            }
+            let deleteAllitem = document.getElementById("deleteAllitem");
+            if (selectedButton.length > 0) {
+                deleteAllitem.style.display = "block"
+            }
+            else {
+                deleteAllitem.style.display = "none"
+            }
+        }
+         // section is create all deletebutton data delete//
+         function checkRow() {
+            let deleteAllitem = document.getElementById("deleteAllitem")
+            let remainingItems = []
+            for (let i = 0; i < array.length; i++) {
+               if (!selectedButton.includes(i)) {
+                remainingItems.push(array[i])
+               }              
+            }
+            printElement(remainingItems)
+            array=remainingItems
+            selectedButton.length = 0
+            if (selectedButton.length>0) {
+                deleteAllitem.style.display="block"
+            }
+            else{
+                deleteAllitem.style.display="none"
+            }
+         }
+    </script>
+
+</body>
+
+</html>
